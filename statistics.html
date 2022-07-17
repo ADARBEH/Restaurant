@@ -33,7 +33,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 3px 5% ;
-    margin-bottom: 100px;
 }
 
 
@@ -80,19 +79,13 @@ tr{font-size: 15px;}
   table {
     width: 50%;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     border: 1px solid;
     margin-left: auto; 
    margin-right: auto;
    background-color: rgb(77, 134, 134);
   }
-  form{
-    margin-top: 30px;
-    margin-bottom: 100px;
-  }
-  label , input , select{
-    font-size: 20px;
-  }
+
   #submit{
     font-size: 18px;
     font-weight: bold;
@@ -102,9 +95,20 @@ tr{font-size: 15px;}
     border: 1;
     border-radius: 5px;
     background-color: rgb(121, 103, 70);
-    margin-top: 60px;
   }
 
+#btm{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 5px;
+    width: 10%;
+    border: 1;
+    border-radius: 5px;
+    background-color: rgb(121, 103, 70);
+
+}
 </style>
 
 
@@ -123,29 +127,12 @@ tr{font-size: 15px;}
   
 
 <main >
-
-  <form id="formID">
-    <label for="FoodName">Food Name</label>
-    <input type="text" name="FoodName" id="FoodName" placeholder="Enter Food Name" >
-
-
-    <label for="Typesoffood">Types of the food:</label>
-    <select class="Typesoffood" name="Typesoffood">
-    <option value="Fruit and vegetables">Fruit and vegetables</option>
-    <option value="Starchy food">Starchy food</option>
-    <option value="Dairy">Dairy</option>
-    <option value="Prtofotein">Protein</option>
-    <option value="Fat">Fat</option>
-    </select>
-
-    <label for="Pric">Price</label>
-    <input type="number" name="Pric" id="Pric"  >
-
     <div>
-        <input type="submit" id="submit" value="submit" />
-
+        <button id="btm" onClick="document.location.reload(true)">DELETE TABLE </button>
     </div>
-  </form>
+
+    <form id="formID">
+    </form>
 
 </main>
 
@@ -158,6 +145,6 @@ tr{font-size: 15px;}
         <a href="mailto:RETAAD99@GMAIL.COM">Retaad99@gmail.com</a></a></li>
   </ul>
 </footer>
-<script src="js/app.js"></script>
+<script src="js/statistics.js"></script>
 </body>
 </html>
