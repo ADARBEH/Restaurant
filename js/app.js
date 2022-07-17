@@ -25,50 +25,26 @@ function handleSubmit(event) {
 
     const newfood = new Food(foodid, FoodNameel, Typesoffood, Pricel);
    
-    console.log(newfood);
-    newfood.print();
-};
-
-Food.prototype.print = function () {
-    const tab = document.createElement("div");
-    
-    tab.innerHTML = `
-       
-        <div class="info">
-        <table>
-           
-        <table>
-        <tr>
-        <th>Food ID</th>
-        <th>Food Name</th>
-        <th>Food Type</th>
-        <th>Food Price </th>
-        </tr>
-         <tr>
-         <td>${this.food_id}</td>
-         <td>${this.food_name}</td>
-         <td>${this.type}</td>
-         <td>${this.pric}</td>
-        </tr>
-        </table>
-           
-           
-        </div>
-    `;
-
-    
-    elm.appendChild(tab); 
+    savedata();
 };
 
 
-for(let i = 0; i < food_info.length; i++){
-    food_info[i].print();
+
+function savedata (){
+    let string_data = JSON.stringify(food_info);
+    localStorage.setItem("food_info",string_data)
 }
-
-
-
-
-
-
+function getdata (){
+    let retriveddata =  localStorage.getItem("food_info");
+      let arr_data = JSON.parse(retriveddata);
+  
+      for(let i = 0; i < arr_data.length; i++){
+          new Food(arr_data[i].food_id, arr_data[i].food_name, arr_data[i].type, arr_data[i].pric);
+      }
+  
+      
+    }
+  getdata();
+     
 
 
