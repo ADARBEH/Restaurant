@@ -12,35 +12,57 @@ function Food(food_id, food_name, type, pric ) {
 }
 
 
-Food.prototype.print = function () {
-    const tab = document.createElement("div");
-    
-    tab.innerHTML = `
-       
-        <div class="info">
-        <table>
-           
-        <table>
-        <tr>
-        <th>Food ID</th>
-        <th>Food Name</th>
-        <th>Food Type</th>
-        <th>Food Price </th>
-        </tr>
-         <tr>
-         <td>${this.food_id}</td>
-         <td>${this.food_name}</td>
-         <td>${this.type}</td>
-         <td>${this.pric}</td>
-        </tr>
-        </table>
-           
-           
-        </div>
-    `;
 
-    
-    elm.appendChild(tab); 
+let table = document.createElement('table');
+let thead = document.createElement('thead');
+let tbody = document.createElement('tbody');
+
+table.appendChild(thead);
+table.appendChild(tbody);
+
+// Adding the entire table to the body tag
+document.getElementById('body').appendChild(table);
+
+let row_1 = document.createElement('tr');
+let heading_1 = document.createElement('th');
+heading_1.innerHTML = "ID";
+let heading_2 = document.createElement('th');
+heading_2.innerHTML = "Food Name";
+let heading_3 = document.createElement('th');
+heading_3.innerHTML = "Type of Food";
+let heading_4 = document.createElement('th');
+heading_4.innerHTML = "Price";
+
+row_1.appendChild(heading_1);
+row_1.appendChild(heading_2);
+row_1.appendChild(heading_3);
+row_1.appendChild(heading_4);
+
+thead.appendChild(row_1);
+
+
+
+
+Food.prototype.print = function () {
+  // Creating and adding data to first row of the table
+let row_inside = document.createElement('tr');
+let heading_1 = document.createElement('th');
+heading_1.innerHTML =  this.food_id;
+let heading_2 = document.createElement('th');
+heading_2.innerHTML = this.food_name;
+let heading_3 = document.createElement('th');
+heading_3.innerHTML = this.type;
+let heading_4 = document.createElement('th');
+heading_4.innerHTML = this.pric;
+
+row_inside.appendChild(heading_1);
+row_inside.appendChild(heading_2);
+row_inside.appendChild(heading_3);
+row_inside.appendChild(heading_4);
+tbody.appendChild(row_inside);
+
+
+
 };
 
 
@@ -65,9 +87,73 @@ button.addEventListener('click', handleclick);
 
 function handleclick() {
 
-let q =  confirm("ARE YOU SURE TO DELETE TABLE ?");
- if (q== true){localStorage.clear()}
-
+ let q =  confirm("ARE YOU SURE TO DELETE TABLE ?");
+ if (q== true){localStorage.clear()};
 };
-   
 
+ const namee = [];
+ const price = [];
+ const typee = [];
+ 
+
+ for(let i = 0; i < food_info.length; i++){
+ namee.push(food_info[i].food_name);
+ price.push(food_info[i].pric)
+ typee.push(food_info[i].type)
+ };
+
+
+ let Types = ["Fruit and vegetables", "Starchy food", "Dairy", "Protein", "Fat"];
+
+ 
+  const data = {
+    labels: namee,
+    datasets: [{
+      label: 'chart Food & Price',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: price,
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+
+  const data1 = {
+    labels: typee,
+      datasets: [{
+        label: 'My First Dataset',
+        data: [1,3,4,5],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+  const config1 = {
+    type: 'pie',
+    data: data1,
+  };
+  const myChart1 = new Chart(
+    document.getElementById('myChart1'),
+    config1
+  );
+
+  
+
+ 
+
+ 
+
+  
