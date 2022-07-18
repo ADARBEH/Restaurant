@@ -9,6 +9,7 @@
 <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/qR0tP0Fg/Screenshot-28.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
     body,h1,h2,h3,h4,h5,h6 ,span, button {font-family: "Roboto"}
@@ -76,17 +77,12 @@ body {
 label , td {font-size: 15px;}
 tr{font-size: 15px;}
 
-  table {
-    width: 50%;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    border: 1px solid;
-    margin-left: auto; 
-   margin-right: auto;
-   background-color: rgb(77, 134, 134);
-  }
+ 
+table{
+    border-collapse: collapse;
+}
 
-  #submit{
+#submit{
     font-size: 18px;
     font-weight: bold;
     margin: 20px 0;
@@ -95,7 +91,7 @@ tr{font-size: 15px;}
     border: 1;
     border-radius: 5px;
     background-color: rgb(121, 103, 70);
-  }
+}
 
 #btm{
     margin-top: 40px;
@@ -109,10 +105,39 @@ tr{font-size: 15px;}
     background-color: rgb(121, 103, 70);
 
 }
+
+
+table td, table th {
+  border: 1.5px solid rgb(0, 0, 0);
+  padding: 8px;
+}
+
+
+table tr:hover {background-color: #ddd;}
+
+
+table{
+    width: 700px;
+    margin: auto;
+    background-color: #04AA6D;
+    color: white;
+    text-align: center;
+}
+#myChart{
+margin-top: 100px;
+margin-bottom: 80px;
+margin-left: 20%;
+margin-right: 20%;
+}
+#myChart1{
+margin-top: 100px;
+margin-bottom: 80px;
+margin-left: 20%;
+margin-right: 20%;
+}
 </style>
-
-
 </head>
+
 <body>
 
 <header>
@@ -127,12 +152,26 @@ tr{font-size: 15px;}
   
 
 <main >
+
     <div>
         <button id="btm" onClick="document.location.reload(true)">DELETE TABLE </button>
     </div>
 
-    <form id="formID">
-    </form>
+    <div>
+        <form id="formID">
+        </form>
+    </div>
+
+    <div>
+        <table id="body"></table>
+    </div>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <div>
+        <canvas id="myChart1"></canvas>
+    </div>
 
 </main>
 
