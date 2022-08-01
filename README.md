@@ -17,3 +17,5 @@
 #### ANS:  Everthing is good
 ### Q2) How long did it take you to complete this assignment? And, before you started, how long did you think it would take you to complete this assignment?
 #### ANS: I thought it Easy, but it took 4 hours
+
+![alt](https://raw.githubusercontent.com/hamzahhisham306/city-explorer/main/map.jpg)
